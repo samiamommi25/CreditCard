@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+
+
+<AnchorPane prefHeight="583.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cse213.creditcard.creditCardController">
+   <children>
+      <TextField fx:id="cardNumberTF" layoutX="121.0" layoutY="50.0" />
+      <Label layoutX="36.0" layoutY="54.0" text="Enter card No:" />
+      <ComboBox fx:id="cardtypeCB" layoutX="394.0" layoutY="50.0" prefWidth="150.0" />
+      <ComboBox fx:id="gatewayCB" layoutX="394.0" layoutY="100.0" prefWidth="150.0" />
+      <TextField fx:id="holdernoTF" layoutX="121.0" layoutY="91.0" />
+      <Label layoutX="27.0" layoutY="95.0" text="Enter Holder no:" />
+      <Label layoutX="288.0" layoutY="54.0" text="Select Card Type:" />
+      <Label layoutX="293.0" layoutY="104.0" text="Select gateway:" />
+      <Label layoutX="293.0" layoutY="148.0" text="Select Ex date:" />
+      <DatePicker fx:id="datePicker" layoutX="370.0" layoutY="144.0" />
+      <TextField fx:id="cardlimitTF" layoutX="121.0" layoutY="135.0" />
+      <Label layoutX="15.0" layoutY="139.0" text="Enter card Limit:" />
+      <Button layoutX="183.0" layoutY="193.0" mnemonicParsing="false" onAction="#ValidateAddButton" text="Validate &amp; Add new card in ArrayList" />
+      <Line endX="387.0" endY="-14.800018310546875" layoutX="213.0" layoutY="242.0" startX="-213.0" startY="-14.800018310546875" />
+      <ComboBox fx:id="filteringGatewayCB" layoutX="116.0" layoutY="244.0" prefWidth="150.0" />
+      <Label layoutX="15.0" layoutY="248.0" text="Select gateway:" />
+      <TextField fx:id="filteringCardlimitTF" layoutX="407.0" layoutY="244.0" />
+      <Label layoutX="301.0" layoutY="248.0" text="Enter card Limit:" />
+      <Button layoutX="218.0" layoutY="279.0" mnemonicParsing="false" onAction="#loadTableButton" text="Search &amp; Load Table" />
+      <TableView fx:id="Tableview" layoutY="325.0" prefHeight="200.0" prefWidth="601.0">
+        <columns>
+          <TableColumn fx:id="cardnoTC" prefWidth="252.79999387264252" text="Card No" />
+          <TableColumn fx:id="holdernameTC" minWidth="0.0" prefWidth="120.79998779296875" text="Holder name " />
+            <TableColumn fx:id="gatewaTC" prefWidth="132.800048828125" text="Gateway " />
+            <TableColumn fx:id="CardlimitTC" prefWidth="95.20004272460938" text="Card limit" />
+        </columns>
+      </TableView>
+      <Button layoutX="51.0" layoutY="533.0" mnemonicParsing="false" onAction="#averageButton" prefHeight="26.0" prefWidth="264.0" text="Show Average Credit Limit From TableView" />
+      <Label fx:id="outputAverageLable" layoutX="360.0" layoutY="533.0" prefHeight="26.0" prefWidth="242.0" style="-fx-background-color: lightblue;" text="Average" />
+   </children>
+</AnchorPane>
